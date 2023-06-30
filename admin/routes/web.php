@@ -11,6 +11,8 @@ use App\Http\Controllers\UPDATEbyIDChatReplyController;
 use App\Http\Controllers\clearHistoryController;
 use App\Http\Controllers\findChatController;
 use App\Http\Controllers\DeletebyIDController;
+use App\Http\Controllers\unresolvedQuesriesController;
+
 
 Route::get('/', function () {
     if(session()->get('admin')){
@@ -94,6 +96,10 @@ Route::get('/FindToDelete',function(){
 Route::get('/finddeleteChat',[findChatController::class,'Returnindex']);
 Route::post('/finddeleteChat',[findChatController::class,'delete']);
 Route::get('/DeletebyID',[DeletebyIDController::class,'deleteChat']);
+
+Route::get('/unresolved',[unresolvedQuesriesController::class,'show']);
+Route::post('/unresolved_form',[unresolvedQuesriesController::class,'form']);
+Route::post('/unresolved_savechat',[unresolvedQuesriesController::class,'save']);
 
 Route::get('/logout',function(){
     //session checks

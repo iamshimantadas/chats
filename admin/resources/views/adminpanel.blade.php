@@ -99,6 +99,7 @@ tr:nth-child(even){background-color: #f2f2f2}
   <a href="{{url('/')}}/updatechat"><i class="bi bi-brush-fill"></i> Update chat</a>
   <a href="{{url('/')}}/FindToUpdate"><i class="bi bi-binoculars-fill"></i> Find chat to update</a>
   <a href="{{url('/')}}/FindToDelete"><i class="bi bi-clipboard2-x-fill"></i> Find chat to delete</a>
+  <a href="{{url('/')}}/unresolved"><i class="bi bi-send-x-fill"></i> Unresolved queries</a>
   <a href="{{url('/')}}/logout"><i class="bi bi-person-fill-exclamation"></i> Logout</a>
   
   

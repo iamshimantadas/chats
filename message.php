@@ -18,7 +18,28 @@ if(mysqli_num_rows($run_query) > 0){
     $replay = $fetch_data['replies'];
     echo $replay;
 }else{
-    echo "Sorry can't be able to understand you!<br> If you not satisfied by our services, then please reply to admin:<br> <b>shimanta@microcodes.in</b>";
+    echo "Sorry I can't understand your ask! try again please! If your query not solve, then <b>within 24 Hours we will fix that</b>! Please try after then!! ";
+
+    // saving unresolved query into table....
+    $getMesg = mysqli_real_escape_string($conn, $_POST['text']);
+    $sql = "INSERT INTO `unreserved_query` (`queries`, `dates`, `msgtime`, `loc`) VALUES (?,?,?,?)";
+
+    $query = mysqli_prepare($conn,$sql);
+
+if ($query) {
+    mysqli_stmt_bind_param($query,'ssss',$userQueries,$udate,$utime,$uloc);
+
+    $userQueries=$_POST['text'];
+    $userQueries = mysqli_real_escape_string($conn,$userQueries);
+    $userQueries = htmlspecialchars($userQueries);
+    $udate = date("Y-m-d");
+    date_default_timezone_set("Asia/Calcutta"); 
+    $utime = date("h:i:sa");
+    $uloc = getenv('REMOTE_ADDR');;
+    mysqli_stmt_execute($query);
+}
+
+
 }
 ?>
 

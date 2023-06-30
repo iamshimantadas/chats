@@ -11,6 +11,8 @@
     <title>chat history</title>
   </head>
   <body>
+  <br>
+    <a href="{{url('/')}}/adminpanel"><button class="btn btn-primary">back to home</button></a>
     <br>
     <div class="row">
     <h3 class="text-center">Chat History
