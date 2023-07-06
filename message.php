@@ -1,3 +1,4 @@
+
 <?php
 // connecting to database
 include 'connection.php';
@@ -18,7 +19,7 @@ if(mysqli_num_rows($run_query) > 0){
     $replay = $fetch_data['replies'];
     echo $replay;
 }else{
-    echo "Sorry I can't understand your ask! try again please! If your query not solve, then <b>within 24 Hours we will fix that</b>! Please try after then!! ";
+    echo "Sorry I can't understand your ask! try again please! If your query not solve, then <b>within 24 Hours we will fix that</b>! You can also raise your enquiry to us directly! <br> <button id='myBtn' onclick='act()' class='btn btn-dark' >Enquiry Form</button> ";
 
     // saving unresolved query into table....
     $getMesg = mysqli_real_escape_string($conn, $_POST['text']);

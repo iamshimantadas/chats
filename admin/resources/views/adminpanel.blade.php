@@ -94,6 +94,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 <div class="sidebar">
   <a class="active" href="#">Home</a>
+  <a href="{{url('/')}}/enquery"><i class="bi bi-search"></i> Recent Enquiries</a>
    <a  href="{{url('/')}}/chathistory"><i class="bi bi-clock-fill"></i> Chat history</a>
   <a href="{{url('/')}}/insertChat&Reply"><i class="bi bi-file-earmark-plus-fill"></i> Insert new chat</a>
   <a href="{{url('/')}}/updatechat"><i class="bi bi-brush-fill"></i> Update chat</a>

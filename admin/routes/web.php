@@ -12,6 +12,7 @@ use App\Http\Controllers\clearHistoryController;
 use App\Http\Controllers\findChatController;
 use App\Http\Controllers\DeletebyIDController;
 use App\Http\Controllers\unresolvedQuesriesController;
+use App\Http\Controllers\enqueryController;
 
 
 Route::get('/', function () {
@@ -32,6 +33,9 @@ Route::get('/adminpanel', function () {
         return view('login');
     }
 });
+
+Route::get('/enquery',[enqueryController::class,'rec']);
+Route::get('/clear_all_enq',[enqueryController::class,'trash']);
 
 Route::get('/chathistory',[ChatHistoryController::class,'show']);
 

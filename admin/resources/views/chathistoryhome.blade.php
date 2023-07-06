@@ -11,22 +11,28 @@
     <title>chat history</title>
   </head>
   <body>
+
   <br>
-    <a href="{{url('/')}}/adminpanel"><button class="btn btn-primary">back to home</button></a>
-    <br>
-    <div class="row">
-    <h3 class="text-center">Chat History
-    <form action="{{url('/')}}/clearHistory" method="post">
+   <a href="{{url('/')}}/adminpanel">
+    <button class="btn btn-primary" style="float:left;position:left;margin-left:30px;">
+        back to home
+    </button>
+   </a>
+
+   <form action="{{url('/')}}/clearHistory" method="post">
       @csrf
-      <input type="submit" value="clear history" class="btn btn-danger" style="float:right;">
+      <input type="submit" value="clear history" class="btn btn-danger" style="float:right;position:right;margin-right:30px;">
     </form>
-    
-    </h3>
-    </div>
-    
+
+  <br>
+
+
+  
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
+
+        <h3 class="text-center">Chat History</h3>
 
         <table class="table">
   <thead>
