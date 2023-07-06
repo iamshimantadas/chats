@@ -5,6 +5,15 @@ $fname = $_POST['name'];
 $phone = $_POST['phone'];
 $iden = $_POST['iden'];
 $enq = $_POST['enquery'];
+
+// filter user inputs
+$fname = htmlspecialchars($fname);
+$phone = htmlspecialchars($phone);
+$iden = htmlspecialchars($iden);
+$enq = htmlspecialchars($enq);
+
+$enq = mysqli_real_escape_string($conn,$enq);
+
 $date = date("Y/m/d");
 date_default_timezone_set("Asia/Calcutta"); 
 $time = date("h:i a");;

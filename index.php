@@ -48,12 +48,7 @@
   z-index: 1; 
   padding-top: 100px; 
   left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4); ">
+  top: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);">
 
 <!-- Modal content -->
 <div style=" position: relative;
@@ -109,82 +104,7 @@
         <br>
         
   </div>
-  <!-- <div class="modal-footer">
-    <h3>Modal Footer</h3>
-  </div> -->
 </div>
-
-<style>
-    /* The Modal (background) */
-.modal1 {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
-  padding-top: 100px; 
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4); 
-}
-
-/* Modal Content */
-.modal-content1 {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  border: 1px solid #888;
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s
-}
-
-/* Add Animation */
-@-webkit-keyframes animatetop {
-  from {top:-300px; opacity:0} 
-  to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-  from {top:-300px; opacity:0}
-  to {top:0; opacity:1}
-}
-
-/* The Close Button */
-.close1 {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close1:hover,
-.close1:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.modal-header1 {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-
-.modal-body1 {padding: 2px 16px;}
-
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-</style>
 
 </div>
 
@@ -393,19 +313,4 @@ window.onclick = function(event) {
         });
     });
 </script>
-
-<!-- <script>
-    $(document).ready(function(){
-
-        $('#btn2').click(function(){
-            console.log('button pressed!');
-//   modal.style.display = "block";
-        });
-        $('#send-btn').click(function(){
-            console.log('send button clicked');
-        });
-
-    });
-</script> -->
-
 </html>
