@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2023 at 04:27 PM
+-- Generation Time: Jul 06, 2023 at 07:52 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -83,23 +83,21 @@ CREATE TABLE `chathistory` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `chathistory`
+-- Table structure for table `enquiry_table`
 --
 
-INSERT INTO `chathistory` (`enrollno`, `queries`, `dates`, `msgtime`, `loc`, `created_at`, `updated_at`) VALUES
-(1, 'hi', '2023-06-25', '01:33:14', '::1', NULL, NULL),
-(2, 'hi', '2023-06-24', '01:34:11', '::1', NULL, NULL),
-(3, 'principal', '2023-06-25', '01:36:17', '::1', NULL, NULL),
-(4, 'who is the principal', '2023-06-25', '01:36:25', '::1', NULL, NULL),
-(5, 'principal', '2023-06-24', '01:36:46', '::1', NULL, NULL),
-(6, 'where does admission of 6th sem will start ?', '2023-06-25', '01:37:11', '::1', NULL, NULL),
-(7, 'who is db sir ?', '2023-06-25', '01:37:31', '::1', NULL, NULL),
-(8, 'db sir', '2023-06-24', '01:40:21', '::1', NULL, NULL),
-(9, '6th sem admission', '2023-06-25', '01:40:42', '::1', NULL, NULL),
-(10, 'hi', '2023-06-26', '07:28:48', '::1', NULL, NULL),
-(11, 'who are you', '2023-06-26', '07:29:00', '::1', NULL, NULL),
-(12, 'who are you', '2023-06-26', '07:33:27', '::1', NULL, NULL);
+CREATE TABLE `enquiry_table` (
+  `id` bigint(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `phone` bigint(10) NOT NULL,
+  `usertype` varchar(255) NOT NULL,
+  `msg` longtext NOT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `time` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -116,15 +114,6 @@ CREATE TABLE `unreserved_query` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `unreserved_query`
---
-
-INSERT INTO `unreserved_query` (`enrollno`, `queries`, `dates`, `msgtime`, `loc`, `created_at`, `updated_at`) VALUES
-(2, 'principal', '2023-06-24', '01:36:16', '::1', NULL, NULL),
-(3, 'who is the principal', '2023-06-24', '01:36:25', '::1', NULL, NULL),
-(6, '6th sem admission', '2023-06-24', '01:40:42', '::1', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -147,6 +136,12 @@ ALTER TABLE `chatbotadmins`
 --
 ALTER TABLE `chathistory`
   ADD PRIMARY KEY (`enrollno`);
+
+--
+-- Indexes for table `enquiry_table`
+--
+ALTER TABLE `enquiry_table`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `unreserved_query`
@@ -174,13 +169,19 @@ ALTER TABLE `chatbotadmins`
 -- AUTO_INCREMENT for table `chathistory`
 --
 ALTER TABLE `chathistory`
-  MODIFY `enrollno` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `enrollno` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `enquiry_table`
+--
+ALTER TABLE `enquiry_table`
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `unreserved_query`
 --
 ALTER TABLE `unreserved_query`
-  MODIFY `enrollno` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `enrollno` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
