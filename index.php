@@ -1,34 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat service[Sir Gurudas Mahavidyalaya]</title>
-    
-    <link rel="icon" type="image/x-icon" href="girl.jpg">
-
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-
-
-</head>
-<body style="background-color:#6666ff">
-
-    <div class="wrapper">
-        <div class="title">Chat Assistant(disha)</div>
-        <div class="form">
-            <div class="bot-inbox inbox">
-            <div class="icon">
-                <img src="girl.jpg" class="icon">
-                </div>
-                <div class="msg-header">
-                    <p>Hello, I'm Disha, how can I help you? You can ask me anything with respect to this site.</p>
+<!DOCTYPE html > < html lang = "en" > < head > < meta charset = "UTF-8" > < meta name = "viewport" content = "width=device-width, initial-scale=1.0" > < title > Chat service[microcodes.in] < /title > < link rel = "icon" type = "image/x-icon" href = "girl.jpg" > < link rel = "stylesheet" href = "style.css" > < link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" > < script src = "https://kit.fontawesome.com/a076d05399.js"></script > < script src = "https://code.jquery.com/jquery-3.5.1.min.js"></script > < /head > < body style = "background-color:#6666ff" > < div class = "wrapper" > < div class = "title" > Chat Assistant(emily) < /div > < div class = "form" > < div class = "bot-inbox inbox" > < div class = "icon" > < img src = "girl.jpg" class = "icon" > < /div > < div class = "msg-header" > < p > Hello, I'm Emily, how can I help you? You can ask me anything with respect to this site.</p>
                 </div>
             </div>
         </div>
@@ -43,10 +13,10 @@
 
     <!-- form -->
     <!-- The Modal -->
-<div id="myModal" style="display: none; 
-  position: fixed; 
-  z-index: 1; 
-  padding-top: 100px; 
+<div id="myModal" style="display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
   left: 0;
   top: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0,0,0);background-color: rgba(0,0,0,0.4);">
 
@@ -69,7 +39,7 @@
       <span style=" color: white;
   float: right;
   font-size: 28px;
-  font-weight: bold;"><button onclick="spanAct()" style="background-color:green;color:white;" >&times;</button></span>  
+  font-weight: bold;"><button onclick="spanAct()" style="background-color:green;color:white;" >&times;</button></span>
     <h2>Enquiry Form</h2>
   </div>
   <div style="padding: 2px 16px;">
@@ -91,7 +61,7 @@
             <option value="visitor" selected>visitor</option>
             <option value="new student">new student</option>
             <option value="faculty">faculty(college staff)</option>
-          </select>    
+          </select>
         </div>
           <div class="mb-3">
         <label for="uquery" class="form-label">Your Query/Message</label>
@@ -102,7 +72,6 @@
 
         <br>
         <br>
-        
   </div>
 </div>
 
@@ -113,17 +82,16 @@
         $(document).ready(function(){
             $("#send-btn").on("click", function(){
                 $value = $("#data").val();
-                $msg = '<div class="user-inbox inbox"><div class="msg-header"><p>'+ $value +'</p></div></div>';
+                $msg = ' < div class = "user-inbox inbox"><div class = "msg-header"><p > '+ $value +' < /p></div></div > ';
                 $(".form").append($msg);
                 $("#data").val('');
-                
                 // start ajax code
                 $.ajax({
                     url: 'message.php',
                     type: 'POST',
-                    data: 'text='+$value,
+                    data: 'text = '+$value,
                     success: function(result){
-                        $replay = '<div class="bot-inbox inbox"><div class="icon"><img src="girl.jpg" class="icon" style="background:green;"></div><div class="msg-header"><p>'+ result +'</p></div></div>';
+                        $replay = ' < div class = "bot-inbox inbox"><div class = "icon"><img src = "girl.jpg" class = "icon" style = "background:green;"></div><div class = "msg-header"><p > '+ result +' < /p></div></div > ';
                         $(".form").append($replay);
                         // when chat goes down the scroll bar automatically comes to the bottom
                         $(".form").scrollTop($(".form")[0].scrollHeight);
@@ -132,8 +100,6 @@
             });
         });
     </script>
-    
-    
 
 </body>
 <script>
@@ -146,7 +112,7 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close1")[0];
 
-// When the user clicks the button, open the modal 
+// When the user clicks the button, open the modal
 btn.onclick = function() {
     console.log('button pressed!');
   modal.style.display = "block";
@@ -171,7 +137,7 @@ window.onclick = function(event) {
   modal.style.display = "block";
     }
     function spanAct(){
-        modal.style.display = "none";   
+        modal.style.display = "none";
     }
     function windowAct(event){
         if (event.target == modal) {
@@ -183,134 +149,140 @@ window.onclick = function(event) {
 <script>
     $(document).ready(function(){
         $('#submit').click(function(e){
-            e.preventDefault();
+e.preventDefault();
 
-            let name = $('#fname').val();
-            let phone = $('#phone').val();
-            let personIden = $('#personIden').val();
-            let query = $('#uquery').val();
+let name = $('#fname').val();
+let phone = $('#phone').val();
+let personIden = $('#personIden').val();
+let query = $('#uquery').val();
 
-            // indian phone number validity
-            let NUM = parseInt(phone.charAt(0));
-            // checks number start with 6/7/8/9
-            if(phone.length==10){
-               
-             switch(NUM){
-              case 9:
+// indian phone number validity
+let NUM = parseInt(phone.charAt(0));
+// checks number start with 6/7/8/9
+if (phone.length == 10) {
 
-                $.ajax({
-            url:"enquiryform.php",
-            method:"POST",
-            data:{name:name,phone:phone,enquery:query,iden:personIden},
-            success:function(data){
+    switch (NUM) {
+        case 9:
 
-                if(data){
-                    alert(data);
-                console.log(data);
+            $.ajax({
+                url:"enquiryform.php",
+                method:"POST",
+                data: {
+                    name:name, phone:phone, enquery:query, iden:personIden
+                },
+                success:function(data) {
 
-                // reset all registration form fields
-           $('#enquiryFORM')[0].reset();
+                    if (data) {
+                        alert(data);
+                        console.log(data);
 
-           modal.style.display = "none";  
+                        // reset all registration form fields
+                        $('#enquiryFORM')[0].reset();
 
-                }else{
+                        modal.style.display = "none";
 
-                }
-                
-            }
-        });
-
-                break;
-                case 8:
-
-                  $.ajax({
-            url:"enquiryform.php",
-            method:"POST",
-            data:{name:name,phone:phone,enquery:query,iden:personIden},
-            success:function(data){
-
-                if(data){
-                    alert(data);
-                console.log(data);
-
-                // reset all registration form fields
-           $('#enquiryFORM')[0].reset();
-
-           modal.style.display = "none";  
-
-                }else{
+                    } else {}
 
                 }
-                
-            }
-        });
+            });
 
-                  break;
-                  case 7:
+            break;
+        case 8:
 
-                    $.ajax({
-            url:"enquiryform.php",
-            method:"POST",
-            data:{name:name,phone:phone,enquery:query,iden:personIden},
-            success:function(data){
+            $.ajax({
+                url:"enquiryform.php",
+                method:"POST",
+                data: {
+                    name:name,
+                    phone:phone,
+                    enquery:query,
+                    iden:personIden
+                },
+                success:function(data) {
 
-                if(data){
-                    alert(data);
-                console.log(data);
+                    if (data) {
+                        alert(data);
+                        console.log(data);
 
-                // reset all registration form fields
-           $('#enquiryFORM')[0].reset();
+                        // reset all registration form fields
+                        $('#enquiryFORM')[0].reset();
 
-           modal.style.display = "none";  
+                        modal.style.display = "none";
 
-                }else{
-
-                }
-                
-            }
-        });
-
-
-                    break;
-                    case 6:
-
-                      $.ajax({
-            url:"enquiryform.php",
-            method:"POST",
-            data:{name:name,phone:phone,enquery:query,iden:personIden},
-            success:function(data){
-
-                if(data){
-                    alert(data);
-                console.log(data);
-
-                // reset all registration form fields
-           $('#enquiryFORM')[0].reset();
-
-           modal.style.display = "none";  
-
-                }else{
+                    } else {}
 
                 }
-                
-            }
-        });
+            });
 
-        
-                      break;
-                      default:
-                        alert("NUMBER MAY START WITH 9/8/7/6 ");
-                        break;
-             }
+            break;
+        case 7:
 
-              }
-              else{
-                  alert('NUMBER LENGTH MUST BE 10 DIGIT!');
-              }
+            $.ajax({
+                url:"enquiryform.php",
+                method:"POST",
+                data: {
+                    name:name,
+                    phone:phone,
+                    enquery:query,
+                    iden:personIden
+                },
+                success:function(data) {
 
-        
+                    if (data) {
+                        alert(data);
+                        console.log(data);
 
-        });
-    });
-</script>
-</html>
+                        // reset all registration form fields
+                        $('#enquiryFORM')[0].reset();
+
+                        modal.style.display = "none";
+
+                    } else {}
+
+                }
+            });
+
+
+            break;
+        case 6:
+
+            $.ajax({
+                url:"enquiryform.php",
+                method:"POST",
+                data: {
+                    name:name,
+                    phone:phone,
+                    enquery:query,
+                    iden:personIden
+                },
+                success:function(data) {
+
+                    if (data) {
+                        alert(data);
+                        console.log(data);
+
+                        // reset all registration form fields
+                        $('#enquiryFORM')[0].reset();
+
+                        modal.style.display = "none";
+
+                    } else {}
+
+                }
+            });
+
+
+            break;
+        default:
+            alert("NUMBER MAY START WITH 9/8/7/6 ");
+            break;
+    }
+
+} else {
+    alert('NUMBER LENGTH MUST BE 10 DIGIT!');
+}
+
+
+
+});
+}); < /script > < /html >
